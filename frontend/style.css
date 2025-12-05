@@ -1,0 +1,818 @@
+/* 🎨 NUEVA PALETA DE COLORES SUAVE Y CALMADA */
+:root {
+  --color1: #00ccbe;
+  --color2: #09a6a3;
+  --color3: #9dbfaf;
+  --color4: #edebc9;
+  --color5: #fcf9d8;
+  --bg-light: #f8f9fa;
+  --bg-card: #ffffff;
+  --text-dark: #2d3748;
+  --text-muted: #4a5568;
+  --border-light: #e2e8f0;
+  --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 10px 15px rgba(0, 0, 0, 0.07);
+}
+
+/* 🎯 ESTILOS GENERALES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+  color: var(--text-dark);
+  min-height: 100vh;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 🏷️ HEADER STYLES */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 30px;
+  background: var(--bg-card);
+  border-radius: 15px;
+  border-left: 5px solid var(--color1);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-light);
+}
+
+.header h1 {
+  color: var(--color2);
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.header p {
+  color: var(--text-muted);
+  font-size: 1.1em;
+  font-weight: 300;
+}
+
+/* 📋 FORM STYLES */
+.form-container {
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-light);
+  border-left: 5px solid var(--color2);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  color: var(--color2);
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+.objetivo-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.objetivo-inputs span {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.objetivo-inputs input,
+.objetivo-inputs select {
+  padding: 10px 12px;
+  border: 2px solid var(--border-light);
+  border-radius: 8px;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.objetivo-inputs input:focus,
+.objetivo-inputs select:focus {
+  outline: none;
+  border-color: var(--color1);
+  box-shadow: 0 0 0 3px rgba(0, 204, 190, 0.1);
+}
+
+/* 🎯 RESTRICCIONES DINÁMICAS */
+.restriccion-item {
+  background: var(--bg-light);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border-left: 4px solid var(--color3);
+  border: 1px solid var(--border-light);
+}
+
+.restriccion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.restriccion-title {
+  color: var(--color2);
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.restriccion-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.restriccion-inputs input {
+  padding: 8px 12px;
+  border: 2px solid var(--border-light);
+  border-radius: 6px;
+  background: white;
+  color: var(--text-dark);
+  font-size: 0.95em;
+  transition: all 0.3s ease;
+  width: 80px;
+}
+
+.restriccion-inputs input:focus {
+  outline: none;
+  border-color: var(--color1);
+  box-shadow: 0 0 0 2px rgba(0, 204, 190, 0.1);
+}
+
+.restriccion-inputs span {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* 🔘 SELECTORES DE DESIGUALDAD - ESTILO IDÉNTICO A MAX/MIN */
+.restriccion-inputs select {
+  padding: 8px 12px;
+  border: 2px solid var(--border-light);
+  border-radius: 6px;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  font-size: 0.95em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 60px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2309a6a3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+  padding-right: 30px;
+}
+
+.restriccion-inputs select:focus {
+  outline: none;
+  border-color: var(--color1);
+  box-shadow: 0 0 0 2px rgba(0, 204, 190, 0.1);
+}
+
+/* 🔘 BOTONES */
+.btn-generar {
+  background: linear-gradient(135deg, var(--color1) 0%, var(--color2) 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+  display: block;
+  margin: 20px auto 0;
+}
+
+.btn-generar:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-secundario {
+  background: linear-gradient(135deg, var(--color3) 0%, var(--color4) 100%);
+  color: var(--text-dark);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 5px;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-secundario:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-eliminar {
+  background: linear-gradient(135deg, #feb2b2 0%, #fc8181 100%);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-eliminar:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* 📊 CHART STYLES */
+.chart-container {
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-light);
+  border-left: 5px solid var(--color3);
+  position: relative;
+}
+
+.chart-title {
+  color: var(--color2);
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+#graficoMetodo {
+  width: 100% !important;
+  height: 500px !important;
+}
+
+.chart-controls {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  display: flex;
+  gap: 8px;
+}
+
+.btn-zoom {
+  background: rgba(0, 204, 190, 0.1);
+  color: var(--color1);
+  border: 1px solid var(--color1);
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.btn-zoom:hover {
+  background: rgba(0, 204, 190, 0.2);
+}
+
+/* 📈 RESULTS STYLES */
+.results-container {
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-light);
+  border-left: 5px solid var(--color4);
+}
+
+.results-title {
+  color: var(--color2);
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  font-weight: 300;
+}
+
+.results-content {
+  background: var(--bg-light);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+}
+
+.result-item {
+  margin-bottom: 15px;
+  padding: 12px;
+  background: rgba(0, 204, 190, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid var(--color1);
+}
+
+/* 🔄 LOADING ANIMATION */
+.loading {
+  display: none;
+  text-align: center;
+  padding: 30px;
+}
+
+.loading-spinner {
+  border: 4px solid var(--color4);
+  border-top: 4px solid var(--color1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .objetivo-inputs,
+  .restriccion-inputs {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .restriccion-inputs input,
+  .restriccion-inputs select {
+    width: 100%;
+  }
+  
+  .header h1 {
+    font-size: 2em;
+  }
+  
+  .container {
+    padding: 10px;
+  }
+  
+  .chart-controls {
+    position: static;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .restriccion-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .restriccion-inputs {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .restriccion-inputs input {
+    width: 70px;
+  }
+  
+  .restriccion-inputs select {
+    width: 70px;
+  }
+}
+
+/* Pequeños ajustes para mejor visualización en móviles */
+@media (max-width: 480px) {
+  .restriccion-inputs {
+    gap: 5px;
+  }
+  
+  .restriccion-inputs input,
+  .restriccion-inputs select {
+    width: 60px;
+    font-size: 0.85em;
+    padding: 6px 8px;
+  }
+  
+  .restriccion-inputs span {
+    font-size: 0.9em;
+  }
+}
+/* 🔧 SELECTOR DE MÉTODO */
+.method-selector {
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-light);
+    border-left: 5px solid var(--color1);
+}
+
+.method-selector h2 {
+    color: var(--color2);
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    font-weight: 300;
+    text-align: center;
+}
+
+.method-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.btn-method {
+    padding: 15px 30px;
+    border: 2px solid var(--color1);
+    background: white;
+    color: var(--color2);
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.btn-method:hover {
+    background: rgba(0, 204, 190, 0.1);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-method.active {
+    background: linear-gradient(135deg, var(--color1) 0%, var(--color2) 100%);
+    color: white;
+    border-color: var(--color2);
+}
+
+.btn-method:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--bg-light);
+    color: var(--text-muted);
+    border-color: var(--border-light);
+}
+
+.method-info {
+    background: var(--bg-light);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border-light);
+}
+
+.method-info p {
+    color: var(--text-muted);
+    font-size: 0.9em;
+    margin: 0;
+}
+
+/* 🎯 VARIABLES DE FUNCIÓN OBJETIVO */
+.variable-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+}
+
+.variable-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.variable-item input {
+    width: 80px;
+    padding: 8px 12px;
+    border: 2px solid var(--border-light);
+    border-radius: 6px;
+    background: white;
+    color: var(--text-dark);
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+}
+
+.variable-item input:focus {
+    outline: none;
+    border-color: var(--color1);
+    box-shadow: 0 0 0 2px rgba(0, 204, 190, 0.1);
+}
+
+.variable-name {
+    font-weight: 600;
+    color: var(--color2);
+    min-width: 30px;
+}
+
+.variable-plus {
+    color: var(--text-muted);
+    margin: 0 5px;
+}
+
+/* 📐 RESTRICCIONES CON VARIABLES DINÁMICAS */
+.restriccion-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+}
+
+.variable-coef {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.variable-coef input {
+    width: 60px;
+    padding: 6px 8px;
+    border: 2px solid var(--border-light);
+    border-radius: 6px;
+    background: white;
+    color: var(--text-dark);
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.variable-coef input:focus {
+    outline: none;
+    border-color: var(--color1);
+    box-shadow: 0 0 0 2px rgba(0, 204, 190, 0.1);
+}
+
+.variable-coef-name {
+    color: var(--text-muted);
+    font-size: 0.9em;
+    min-width: 25px;
+}
+
+.variable-coef-plus {
+    color: var(--text-muted);
+    margin: 0 3px;
+    font-size: 0.9em;
+}
+
+.restriccion-signo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 10px;
+}
+
+.restriccion-signo select {
+    padding: 6px 8px;
+    border: 2px solid var(--border-light);
+    border-radius: 6px;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    font-size: 0.9em;
+    min-width: 50px;
+}
+
+.restriccion-signo input {
+    width: 70px;
+    padding: 6px 8px;
+    border: 2px solid var(--border-light);
+    border-radius: 6px;
+    background: white;
+    color: var(--text-dark);
+    font-size: 0.9em;
+}
+
+/* 📊 TABLA SIMPLEX */
+.simplex-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 0.85em;
+}
+
+.simplex-table th {
+    background: var(--color1);
+    color: white;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid var(--border-light);
+}
+
+.simplex-table td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid var(--border-light);
+    background: white;
+}
+
+.simplex-table tr:nth-child(even) td {
+    background: var(--bg-light);
+}
+
+/* 📱 RESPONSIVE ADICIONAL */
+@media (max-width: 768px) {
+    .method-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-method {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .variable-inputs {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .restriccion-inputs {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .variable-coef, .restriccion-signo {
+        width: 100%;
+    }
+    
+    .simplex-table {
+        font-size: 0.8em;
+        overflow-x: auto;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .variable-item input,
+    .variable-coef input {
+        width: 50px;
+        font-size: 0.85em;
+    }
+    
+    .restriccion-signo input {
+        width: 60px;
+    }
+}
+/* Estilos para tablas simplex */
+.tableau-container {
+    background: white;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-soft);
+}
+
+.tableau-container h4 {
+    color: var(--color2);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color1);
+}
+
+.table-scroll {
+    overflow-x: auto;
+    margin: 10px 0;
+}
+
+.simplex-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 600px;
+}
+
+.simplex-table th {
+    background: var(--color1);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--border-light);
+    font-weight: 600;
+}
+
+.simplex-table td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid var(--border-light);
+}
+
+.simplex-table tr:nth-child(even) td {
+    background: rgba(0, 204, 190, 0.05);
+}
+
+/* Estilos especiales para celdas */
+.simplex-table .zj-cj-row {
+    background: rgba(255, 215, 0, 0.1) !important;
+    font-weight: 600;
+}
+
+.simplex-table .zj-cj-row.positive {
+    color: #e74c3c;
+}
+
+.simplex-table .zj-cj-row.negative {
+    color: #27ae60;
+}
+
+.simplex-table .pivot-cell {
+    background: rgba(231, 76, 60, 0.2) !important;
+    font-weight: bold;
+    border: 2px solid #e74c3c !important;
+}
+
+.simplex-table .variable-cell {
+    background: rgba(52, 152, 219, 0.1);
+    font-weight: 600;
+}
+
+.simplex-table .ld-cell {
+    background: rgba(155, 89, 182, 0.1);
+    font-weight: 600;
+}
+
+/* Información de pivote */
+.pivot-info {
+    background: rgba(241, 196, 15, 0.1);
+    border-left: 4px solid #f1c40f;
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.table-info {
+    background: rgba(46, 204, 113, 0.1);
+    border-left: 4px solid #2ecc71;
+    padding: 8px 12px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* Botones de navegación entre tablas */
+.table-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.table-nav button {
+    padding: 8px 16px;
+    background: var(--color1);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.table-nav button:hover {
+    background: var(--color2);
+    transform: translateY(-2px);
+}
+
+.table-nav button:disabled {
+    background: var(--border-light);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Indicador de fase */
+.phase-indicator {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--color2);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.phase-1 { background: #e74c3c; }
+.phase-2 { background: #27ae60; }
+.phase-15 { background: #f39c12; }

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔧 Métodos de Programación Lineal</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/frontend/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🔧 Métodos de Programación Lineal</h1>
+      <p>Selecciona el método y define tu problema de optimización</p>
+    </header>
+
+    <!-- SELECTOR DE MÉTODO -->
+    <section class="method-selector">
+      <h2>🔧 Selecciona el Método de Solución</h2>
+      <div class="method-buttons">
+        <button type="button" class="btn-method" id="btnGrafico" data-method="grafico">
+          📈 Método Gráfico
+        </button>
+        <button type="button" class="btn-method" id="btnDobleFase" data-method="doblefase">
+          🔄 Método Doble Fase
+        </button>
+      </div>
+      <div class="method-info" id="methodInfo">
+        <p id="infoText">Método gráfico: Visualización 2D de la región factible</p>
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE RESTRICCIONES -->
+    <section class="form-container">
+      <form id="problemaForm">
+        <div class="form-group">
+          <label>🎯 Función Objetivo:</label>
+          <div id="objetivo-container">
+            <span>Z = </span>
+            <div class="variable-inputs" id="variables-container">
+              <div class="variable-item">
+                <input type="number" step="any" name="coef_0" value="0.1" required>
+                <span class="variable-name">x₁</span>
+                <span class="variable-plus">+</span>
+              </div>
+              <div class="variable-item">
+                <input type="number" step="any" name="coef_1" value="0.08" required>
+                <span class="variable-name">x₂</span>
+              </div>
+            </div>
+            <select name="tipo" style="margin-left: 10px;">
+              <option value="max">Maximizar</option>
+              <option value="min">Minimizar</option>
+            </select>
+          </div>
+          <div style="margin-top: 10px;">
+            <button type="button" class="btn-secundario" onclick="agregarVariable()">➕ Agregar Variable</button>
+            <button type="button" class="btn-secundario" onclick="quitarVariable()" id="btnQuitarVariable">➖ Quitar Variable</button>
+          </div>
+        </div>
+
+        <!-- RESTRICCIONES DINÁMICAS -->
+        <div id="restricciones-container">
+          <div class="restriccion-item" data-id="1">
+            <div class="restriccion-header">
+              <span class="restriccion-title">📐 Restricción 1</span>
+              <button type="button" class="btn-eliminar" onclick="eliminarRestriccion(1)">🗑️ Eliminar</button>
+            </div>
+            <div class="restriccion-inputs" id="restriccion-inputs-1">
+              <!-- Los inputs de restricciones se generarán dinámicamente -->
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin: 20px 0;">
+          <button type="button" class="btn-secundario" onclick="añadirRestriccion()">➕ Añadir Restricción</button>
+        </div>
+
+        <button type="submit" class="btn-generar" id="btnResolver">🚀 Resolver Problema</button>
+      </form>
+    </section>
+
+    <div class="loading" id="loading">
+      <div class="loading-spinner"></div>
+      <p id="loadingText">Calculando solución...</p>
+    </div>
+
+    <!-- GRAFICA DE LA REGION FACTIBLE (solo para método gráfico) -->
+    <section class="chart-container" id="chartContainer" style="display: none;">
+      <h2 class="chart-title">📊 Región Factible y Solución Óptima</h2>
+      <canvas id="graficoMetodo"></canvas>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="results-container" id="resultsContainer">
+      <h3 class="results-title">📈 Resultados</h3>
+      <div class="results-content">
+        <div id="puntosResultados" class="result-item">-- Selecciona un método y resuelve --</div>
+        <div id="solucionResultados" class="result-item">-- La solución aparecerá aquí --</div>
+        <div id="tablaResultados" class="result-item" style="display: none;">
+          <!-- Para el método doble fase -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="/frontend/app.js"></script>
+</body>
+</html>
